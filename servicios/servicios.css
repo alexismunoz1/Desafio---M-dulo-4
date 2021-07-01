@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+}
+
+.header__container {
+  background-color: #000000;
+}
+
+.seccion__main {
+  padding: 176px 0 110px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seccion__main-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 48px;
+  color: #ffffff;
+  font-family: "Montserrat";
+}
+
+
+.seccion__servicios {
+  display: flex;
+  justify-content: center;
+  padding: 0 40px 120px 40px;
+}
+
+.servios__card-container {
+  max-width: 290px;
+}
+
+.servios__card-img {
+  width: 100%;
+}
+
+.servicios__card-container-title-texto {
+  text-align: center;
+  font-family: "Poppins";
+}
+
+.servicios__card-title {
+  margin: 0;
+  font-weight: bold;
+  font-size: 24px;
+  color: #dbdbdb;
+}
+
+.servicios__card-texto {
+  margin: 0;
+  color: #dbdbdb;
+  font-size: 16px;
+  line-height: 24px;
+}
