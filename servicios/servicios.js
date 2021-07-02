@@ -1,18 +1,44 @@
 function addDataServicios(params = {}) {
-  const imagenCardEl = document.querySelector(".seccion__presentacion-img");
-  // imagenCardEl.src = params.imagen;
+  const fondoHeaderEl = document.querySelector(".header__container");
+  const fondoMainEl = document.querySelector(".seccion__main");
 
-  const tituloCardEl = document.querySelector(".servicios__card-title");
-  tituloCardEl.textContent = params.titulo;
+  const mediaqueryList = window.matchMedia("(min-width: 769px)");
 
-  const textoCardEl = document.querySelector(
-    ".servicios__card-container-texto"
-  );
-  textoCardEl.textContent = params.texto;
+  if (mediaqueryList.matches) {
+    fondoHeaderEl.style.background = `url(${params.imagenFondo})`;
+    fondoMainEl.style.background = `url(${params.imagenFondo})`;
+  } else {
+    fondoHeaderEl.style.background = "#000000";
+    fondoMainEl.style.background = "#000000";
+  }
+
+  window.addEventListener("resize", () => {
+    if (mediaqueryList.matches) {
+      fondoHeaderEl.style.background = `url(${params.imagenFondo})`;
+      fondoMainEl.style.background = `url(${params.imagenFondo})`;
+    } else {
+      fondoHeaderEl.style.background = "#000000";
+      fondoMainEl.style.background = "#000000";
+    }
+  });
+
+  const template = document.querySelector("#seccion__servicios-template");
+  const container = document.querySelector(".seccion__servicios");
+
+  template.content.querySelector(".servios__card-img").src = params.imagen;
+
+  template.content.querySelector(".servicios__card-title").textContent =
+    params.titulo;
+
+  template.content.querySelector(".servicios__card-texto").textContent =
+    params.texto;
+
+  const clone = document.importNode(template.content, true);
+  container.appendChild(clone);
 }
 
 function getDataServicios() {
-  fetch(
+  return fetch(
     "https://cdn.contentful.com/spaces/ljcia83x15yc/environments/master/entries?access_token=v_nPdvAEDrj2nnIiY0knN-VNduD6kd2ggsIn-_LXxFc&content_type=segundaPaginaServicios"
   )
     .then((res) => {
@@ -20,9 +46,9 @@ function getDataServicios() {
     })
     .then((data) => {
       // console.log(data);
-
       const fieldsCollections = data.items.map((item) => {
         return {
+          imagenFondo: item.fields.imagenFondo.sys.id,
           imagen: item.fields.imagenCard.sys.id,
           titulo: item.fields.tituloCard,
           texto: item.fields.textoCard,
@@ -31,11 +57,13 @@ function getDataServicios() {
       });
 
       fieldsCollections.forEach((el) => {
-        const idEncontrado = searchAsset(el.imagen, el.includes);
-        el.imagen = "https:" + idEncontrado.fields.file.url;
+        const idImgCard = searchAsset(el.imagen, el.includes);
+        el.imagen = "https:" + idImgCard.fields.file.url;
+
+        const idImgFondo = searchAsset(el.imagenFondo, el.includes);
+        el.imagenFondo = "https:" + idImgFondo.fields.file.url;
       });
 
-      console.log(fieldsCollections);
       return fieldsCollections;
     });
 }

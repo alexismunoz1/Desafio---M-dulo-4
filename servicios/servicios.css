@@ -10,13 +10,22 @@ body {
 
 .header__container {
   background-color: #000000;
+  border: none;
 }
 
 .seccion__main {
-  padding: 176px 0 110px 0;
+  padding: 176px 0 126px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #000000;
+}
+@media (min-width: 769px) {
+  .seccion__main {
+    padding: 176px 80px 110px 80px;
+    justify-content: end;
+    min-height: 600px;
+  }
 }
 
 .seccion__main-title {
@@ -26,16 +35,23 @@ body {
   color: #ffffff;
   font-family: "Montserrat";
 }
-
+/*----------final-seccion-main-----------*/
 
 .seccion__servicios {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  gap: 105px;
   padding: 0 40px 120px 40px;
+}
+@media (min-width: 769px) {
+  .seccion__servicios {
+    grid-template-columns: 1fr 1fr;
+    padding: 120px 40px;
+  }
 }
 
 .servios__card-container {
   max-width: 290px;
+  margin: 0 auto;
 }
 
 .servios__card-img {
@@ -43,6 +59,7 @@ body {
 }
 
 .servicios__card-container-title-texto {
+  margin-top: 15px;
   text-align: center;
   font-family: "Poppins";
 }

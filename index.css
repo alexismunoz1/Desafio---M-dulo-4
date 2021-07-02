@@ -138,7 +138,7 @@ body {
 
 .seccion__servicios__cards-content {
   display: grid;
-  gap: 70px;
+  gap: 130px;
 }
 @media (min-width: 769px) {
   .seccion__servicios__cards-content {

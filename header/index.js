@@ -4,7 +4,7 @@ function headerComponent(el) {
   headerEl.innerHTML = `
         <div class="header__container">
         <div class="header__container-logo">
-          <p class="header__logo">ALEXIS</p>
+          <a class="header__logo href="./index.html">ALEXIS</a>
         </div>
         <div class="header__menu-btn">
          <i></i>
@@ -14,7 +14,7 @@ function headerComponent(el) {
 
         <div class="header__ventana">
           <div class="header__ventana-container">
-            <a class="header__ventana-enlaces" href="./index.html">Portfolio</a>
+            <a class="header__ventana-enlaces" href="">Portfolio</a>
             <a class="header__ventana-enlaces" href="./servicios.html">Servicios</a>
             <a class="header__ventana-enlaces" href="#">Contacto</a>
           </div>
