@@ -11,8 +11,8 @@ function addDataFondoContacto(params = {}) {
     fondoContactoEl.style.backgroundImage = `url(${params.fondoPantalla})`;
     fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
   } else {
-    fondoHeaderEl.style.background = "inherit";
-    fondoContactoEl.style.background = "inherit";
+    fondoHeaderEl.style.background = "#000000";
+    fondoContactoEl.style.background = "#000000";
   }
 
   window.addEventListener("resize", () => {
@@ -20,8 +20,8 @@ function addDataFondoContacto(params = {}) {
       fondoContactoEl.style.backgroundImage = `url(${params.fondoPantalla})`;
       fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
     } else {
-      fondoHeaderEl.style.background = "inherit";
-      fondoContactoEl.style.background = "inherit";
+      fondoHeaderEl.style.background = "#000000";
+      fondoContactoEl.style.background = "#000000";
     }
   });
 }

@@ -25,7 +25,7 @@
 }
 @media (min-width: 769px) {
   .header__logo {
-    font-size: 45px;
+    font-size: 36px;
   }
 }
 
@@ -34,7 +34,7 @@
 }
 
 .header__enlaces-desktop-container {
-  text-align: center;
+  text-align: inherit;
   display: grid;
   gap: 28px;
   grid-template-columns: repeat(3, 1fr);
