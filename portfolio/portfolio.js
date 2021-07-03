@@ -5,8 +5,8 @@ function addDataFondo(params = {}) {
   const mediaqueryList = window.matchMedia("(min-width: 769px)");
 
   if (mediaqueryList.matches) {
-    fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
     fondoMainEl.style.backgroundImage = `url(${params.fondoPantalla})`;
+    fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
   } else {
     fondoHeaderEl.style.background = "inherit";
     fondoMainEl.style.background = "inherit";
@@ -14,8 +14,8 @@ function addDataFondo(params = {}) {
 
   window.addEventListener("resize", () => {
     if (mediaqueryList.matches) {
-      fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
       fondoMainEl.style.backgroundImage = `url(${params.fondoPantalla})`;
+      fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
     } else {
       fondoHeaderEl.style.background = "inherit";
       fondoMainEl.style.background = "inherit";
@@ -34,7 +34,7 @@ function getDataFondo() {
       const assetCollections = data.includes.Asset;
 
       const tituloFondoPantalla = assetCollections.find((el) => {
-        return el.fields.title == "gradient-celeste-anaranjado";
+        return el.fields.title == "gradient-celeste-azul";
       });
 
       return {
@@ -43,25 +43,28 @@ function getDataFondo() {
     });
 }
 
-function addDataServicios(params = {}) {
-  const template = document.querySelector("#seccion__servicios-template");
-  const container = document.querySelector(".seccion__servicios");
+function addDataTrabajos(params = {}) {
+  const template = document.querySelector("#seccion__trabajos-template");
+  const contenedor = document.querySelector(".seccion__trabajos");
 
-  template.content.querySelector(".servicios__card-img").src = params.imagen;
+  template.content.querySelector(".trabajos__card-img").src = params.imagen;
 
-  template.content.querySelector(".servicios__card-title").textContent =
+  template.content.querySelector(".trabajos__card-title").textContent =
     params.titulo;
 
-  template.content.querySelector(".servicios__card-texto").textContent =
+  template.content.querySelector(".trabajos__card-texto").textContent =
     params.texto;
 
+  template.content.querySelector(".trabajos__card-url").textContent =
+    params.url;
+
   const clone = document.importNode(template.content, true);
-  container.appendChild(clone);
+  contenedor.appendChild(clone);
 }
 
-function getDataServicios() {
+function getDataTrabajos() {
   return fetch(
-    "https://cdn.contentful.com/spaces/ljcia83x15yc/environments/master/entries?access_token=v_nPdvAEDrj2nnIiY0knN-VNduD6kd2ggsIn-_LXxFc&content_type=segundaPaginaServicios"
+    "https://cdn.contentful.com/spaces/ljcia83x15yc/environments/master/entries?access_token=v_nPdvAEDrj2nnIiY0knN-VNduD6kd2ggsIn-_LXxFc&content_type=dwfM4PaginaPortfolio"
   )
     .then((res) => {
       return res.json();
@@ -72,6 +75,7 @@ function getDataServicios() {
           imagen: item.fields.imagenCard.sys.id,
           titulo: item.fields.tituloCard,
           texto: item.fields.textoCard,
+          url: item.fields.urlCard,
           includes: data.includes.Asset,
         };
       });
@@ -96,15 +100,14 @@ function main() {
   activarDesactivarMenu();
   footerComponent(document.querySelector(".footer"));
 
-  getDataServicios().then((data) => {
-    for (const d of data) {
-      addDataServicios(d);
-    }
-  });
-
   getDataFondo().then((data) => {
     addDataFondo(data);
   });
-}
 
+  getDataTrabajos().then((data) => {
+    for (const d of data) {
+      addDataTrabajos(d);
+    }
+  });
+}
 main();

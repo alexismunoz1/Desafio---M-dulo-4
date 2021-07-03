@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pagina principal</title>
+    <title>Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,50 +30,31 @@
     <script defer src="./header/index.js"></script>
     <link rel="stylesheet" href="./header/index.css" />
 
-    <script defer src="./form/index.js"></script>
-    <link rel="stylesheet" href="./form/index.css" />
-
     <script defer src="./footer/index.js"></script>
     <link rel="stylesheet" href="./footer/index.css" />
 
-    <script defer src="./index.js"></script>
-    <link rel="stylesheet" href="./index.css" />
+    <script defer src="portfolio/portfolio.js"></script>
+    <link rel="stylesheet" href="./portfolio/portfolio.css" />
   </head>
   <body>
     <header class="header"></header>
-
-    <main class="main">
-      <h1 class="main__title"></h1>
-      <h2 class="main__title-second"></h2>
-    </main>
-
-    <section class="seccion__presentacion">
-      <img class="seccion__presentacion-img" src="" alt="" />
-      <div class="seccion__presentacion-container">
-        <h3 class="seccion__presentacion-title"></h3>
-        <div class="seccion__presentacion-parrafo-container">
-          <p class="seccion__presentacion-parrafo"></p>
-        </div>
-      </div>
+    <section class="seccion__main">
+      <h1 class="seccion__main-title">Portfolio</h1>
     </section>
-
-    <section class="seccion__servicios">
-      <h4 class="seccion__servicios-title"></h4>
-
-      <div class="seccion__servicios__cards-content"></div>
-      <template id="seccion__servicios__cards-template">
-        <div class="seccion__servicios__card">
-          <img class="seccion__servicios__card-img" src="" alt="" />
-          <div class="seccion__servicios__card-cont-title-text">
-            <h4 class="seccion__servicios__card-title"></h4>
-            <p class="seccion__servicios__card-text"></p>
+    <section class="seccion__trabajos">
+      <template id="seccion__trabajos-template">
+        <div class="trabajos__card-container">
+          <img class="trabajos__card-img" src="" alt="" />
+          <div class="trabajos__card-container-title-texto">
+            <h3 class="trabajos__card-title">Titulo</h3>
+            <div class="trabajos__card-container-texto">
+              <p class="trabajos__card-texto">Texto</p>
+            </div>
+            <a class="trabajos__card-url" href=""></a>
           </div>
         </div>
       </template>
     </section>
-
-    <section class="seccion__formulario"></section>
-
     <footer class="footer"></footer>
   </body>
 </html>

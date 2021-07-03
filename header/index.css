@@ -1,12 +1,19 @@
 .header__container {
   width: 100%;
   display: flex;
-  padding: 16px 24px;
+  padding: 22px;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   z-index: 2;
   border-bottom: solid 0.5px #414141;
+  background-color: #141414;
+}
+@media (min-width: 769px) {
+  .header__container {
+    position: inherit;
+    padding: 24px;
+  }
 }
 
 .header__logo {
@@ -22,11 +29,15 @@
   }
 }
 
+.enlace__inicio {
+  display: none;
+}
+
 .header__enlaces-desktop-container {
   text-align: center;
   display: grid;
   gap: 28px;
-  grid-template-columns: repeat(3, 114px);
+  grid-template-columns: repeat(3, 1fr);
 }
 @media (max-width: 768px) {
   .header__enlaces-desktop-container {

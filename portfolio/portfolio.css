@@ -17,11 +17,10 @@ body {
 }
 
 .header__container {
-  background-color: #000000;
   border: none;
 }
 
-.enlace__servicios {
+.enlace__portfolio{
   display: none;
 }
 
@@ -34,7 +33,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000000;
 }
 @media (min-width: 769px) {
   .seccion__main {
@@ -53,43 +51,54 @@ body {
 }
 /*----------final-seccion-main-----------*/
 
-.seccion__servicios {
+.seccion__trabajos {
   display: grid;
   gap: 105px;
   padding: 0 40px 120px 40px;
 }
 @media (min-width: 769px) {
-  .seccion__servicios {
-    grid-template-columns: 1fr 1fr;
+  .seccion__trabajos {
+    grid-template-columns: repeat(2, 1fr);
     padding: 120px 40px;
   }
 }
+@media (min-width: 960px) {
+  .seccion__trabajos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
-.servicios__card-container {
+.trabajos__card-container {
   max-width: 290px;
   margin: 0 auto;
 }
 
-.servicios__card-img {
+.trabajos__card-img {
   width: 100%;
 }
 
-.servicios__card-container-title-texto {
+.trabajos__card-container-title-texto {
   margin-top: 15px;
   text-align: center;
   font-family: "Poppins";
 }
 
-.servicios__card-title {
+.trabajos__card-title {
   margin: 0;
   font-weight: bold;
   font-size: 24px;
   color: #dbdbdb;
 }
 
-.servicios__card-texto {
-  margin: 0;
+.trabajos__card-texto {
+  margin: 0 0 15px 0;
   color: #dbdbdb;
   font-size: 16px;
   line-height: 24px;
+}
+
+.trabajos__card-url {
+  font-weight: bold;
+  color: #fc6f50;
+  text-decoration: none;
 }
