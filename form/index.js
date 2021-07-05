@@ -53,7 +53,7 @@ function enviarInfoForm(formEl) {
       }),
     })
       .then(() => {
-        alert("Se envio el formulario");
+        alert("El mensaje se ha enviado correctamente!");
 
         const inputsEl = formEl.querySelectorAll(".seccion__formulario__input");
         inputsEl.forEach((input) => {
