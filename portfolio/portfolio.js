@@ -8,8 +8,8 @@ function addDataFondo(params = {}) {
     fondoMainEl.style.backgroundImage = `url(${params.fondoPantalla})`;
     fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
   } else {
-    fondoHeaderEl.style.background = "#000000";
-    fondoMainEl.style.background = "#000000";
+    fondoHeaderEl.style.backgroundImage = "none";
+    fondoMainEl.style.backgroundImage = "none";
   }
 
   window.addEventListener("resize", () => {
@@ -17,8 +17,8 @@ function addDataFondo(params = {}) {
       fondoMainEl.style.backgroundImage = `url(${params.fondoPantalla})`;
       fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
     } else {
-      fondoHeaderEl.style.background = "#000000";
-      fondoMainEl.style.background = "#000000";
+      fondoHeaderEl.style.backgroundImage = "none";
+      fondoMainEl.style.backgroundImage = "none";
     }
   });
 }

@@ -3,7 +3,9 @@ function addDataFondoContacto(params = {}) {
   tituloEl.textContent = "Contacto";
 
   const fondoHeaderEl = document.querySelector(".header__container");
-  const fondoContactoEl = document.querySelector(".seccion__formulario__contenedor");
+  const fondoContactoEl = document.querySelector(
+    ".seccion__formulario__contenedor"
+  );
 
   const mediaqueryList = window.matchMedia("(min-width: 769px)");
 
@@ -11,8 +13,8 @@ function addDataFondoContacto(params = {}) {
     fondoContactoEl.style.backgroundImage = `url(${params.fondoPantalla})`;
     fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
   } else {
-    fondoHeaderEl.style.background = "#000000";
-    fondoContactoEl.style.background = "#000000";
+    fondoHeaderEl.style.backgroundImage = "none";
+    fondoContactoEl.style.backgroundImage = "none";
   }
 
   window.addEventListener("resize", () => {
@@ -20,8 +22,8 @@ function addDataFondoContacto(params = {}) {
       fondoContactoEl.style.backgroundImage = `url(${params.fondoPantalla})`;
       fondoHeaderEl.style.backgroundImage = `url(${params.fondoPantalla})`;
     } else {
-      fondoHeaderEl.style.background = "#000000";
-      fondoContactoEl.style.background = "#000000";
+      fondoHeaderEl.style.backgroundImage = "none";
+      fondoContactoEl.style.backgroundImage = "none";
     }
   });
 }
