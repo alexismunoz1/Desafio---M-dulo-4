@@ -48,7 +48,7 @@ function enviarInfoForm(formEl) {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
-        to: "emailaddress@gmail.com",
+        to: "munozmiguelalexis@gmail.com",
         message: mensaje,
       }),
     })
